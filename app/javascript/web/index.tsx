@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import "@hotwired/turbo-rails";
-import "./controllers";
 // @ts-ignore
 import App from './components/App';
 
