@@ -5,11 +5,21 @@ default: &default
 
 development:
   <<: *default
-  database: leiva_investing_development
+  host: localhost
+  database: dev
+  username: dev
+  password: dev
+  port: 5437
+  <<: *default
 
 test:
   <<: *default
-  database: leiva_investing_test
+  host: localhost
+  database: dev
+  username: dev
+  password: dev
+  port: 5437
+  <<: *default
 
 production:
   <<: *default

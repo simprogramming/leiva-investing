@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  scope :admin, module: :admin, as: :admin do
+    draw :admin
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  scope "/", module: :web, as: :web do
+    draw :web
+  end
+
+  get '*path', to: 'web/sites#home', constraints: ->(request) { request.format.html? && !request.path.starts_with?('/admin') }
 end
