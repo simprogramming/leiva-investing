@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  concern :localizable do
+    put :change_locale, controller: "application"
+  end
   scope :admin, module: :admin, as: :admin do
+    concerns :localizable
     draw :admin
   end
 

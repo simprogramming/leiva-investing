@@ -1,2 +1,7 @@
+---
 fr:
-  hello: "Hello world"
+  admin:
+    admin:
+      admin:
+        change_language: EN
+  hello: Hello world
