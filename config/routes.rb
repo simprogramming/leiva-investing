@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     draw :web
   end
 
-  get '*path', to: 'web/sites#home', constraints: ->(request) { request.format.html? && !request.path.starts_with?('/admin') }
+  get "*path", to: "web/sites#home", constraints: lambda { |request|
+                                                    request.format.html? && !request.path.starts_with?("/admin")
+                                                  }
 end
