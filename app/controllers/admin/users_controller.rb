@@ -3,6 +3,7 @@ module Admin
     before_action :set_user, only: %i[edit update show destroy]
     before_action -> { authorize @user || User }
 
+    add_controller_helpers :users, only: :index
     decorates_assigned :user, :users
 
     def index

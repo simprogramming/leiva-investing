@@ -4,7 +4,7 @@ RSpec.describe Admin::AdminController do
   let(:user) { create(:user, :admin) }
 
   before { sign_in user }
-  
+
   describe "GET #admin" do
     before do
       get :admin, params: {}

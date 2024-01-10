@@ -36,3 +36,4 @@ en:
       new: New %{model}
       newf: New %{model}
       newm: New %{model}
+  not_allowed: You are not authorized to perform this action.
