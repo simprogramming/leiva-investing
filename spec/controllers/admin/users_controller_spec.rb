@@ -64,4 +64,18 @@ RSpec.describe Admin::UsersController do
       it { expect(response).to have_http_status(:unprocessable_entity) }
     end
   end
+
+  describe "DELETE #destroy" do
+    before { user }
+
+    let(:delete!) { delete :destroy, params: { id: user.to_param } }
+
+    it { expect { delete! }.to change(User, :count).by(-1) }
+
+    context "when called" do
+      before { delete! }
+
+      it { expect(response).to redirect_to(admin_users_url) }
+    end
+  end
 end

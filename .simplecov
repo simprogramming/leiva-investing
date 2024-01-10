@@ -6,6 +6,8 @@ SimpleCov.start "rails" do
   add_filter %w[app/controllers/application_controller.rb
                 app/controllers/admin/application_controller.rb
                 app/controllers/web/application_controller.rb
+                app/policies/application_policy.rb
+                app/decorators/application_decorator.rb
                 app/jobs/application_job.rb
                 app/helpers/application_helper.rb]
 

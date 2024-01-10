@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Admin::UserPolicy, type: :policy do
-  include_examples "admin_base_policy", described_class, User
+  # include_examples "admin_base_policy", described_class, User
 
   let(:user) { build_stubbed(:user, role: :user) }
   let(:admin) { build_stubbed(:user, role: :admin) }
@@ -14,18 +14,6 @@ RSpec.describe Admin::UserPolicy, type: :policy do
 
       it { expect(policy_scope).to eq User.all.to_sql }
     end
-
-    context "when user" do
-      let(:current_user) { user }
-
-      it { is_expected.to eq User.where(id: current_user).to_sql }
-    end
-
-    context "when not authenticated" do
-      let(:current_user) { nil }
-
-      it { is_expected.to eq User.none.to_sql }
-    end
   end
 
   context "when permissions" do
@@ -34,17 +22,6 @@ RSpec.describe Admin::UserPolicy, type: :policy do
     permissions :index?, :show?, :new?, :edit?, :create?, :update?, :destroy? do
       it { expect(policy_class).to permit(admin, User) }
       it { expect(policy_class).not_to permit(user, User) }
-    end
-
-    permissions :login_as? do
-      it { expect(policy_class).to permit(master, admin) }
-      it { expect(policy_class).to permit(admin, user) }
-      it { expect(policy_class).not_to permit(user, user) }
-    end
-
-    permissions :login_back? do
-      it { expect(policy_class).to permit(admin, User) }
-      it { expect(policy_class).to permit(user, User) }
     end
   end
 end

@@ -1,6 +1,9 @@
 ---
 en:
   change_language: FR
+  errors:
+    messages:
+      unknown: An unknown error has occurred
   hello: Hello world
   helpers:
     filters:

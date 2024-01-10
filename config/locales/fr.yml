@@ -1,6 +1,9 @@
 ---
 fr:
   change_language: EN
+  errors:
+    messages:
+      unknown: Une erreur inconnue est survenue
   hello: Hello world
   helpers:
     filters:

@@ -10,8 +10,8 @@ FactoryBot.define do
       role { :admin }
     end
 
-    trait :client do
-      role { :client }
+    trait :user do
+      role { :user }
     end
   end
 end

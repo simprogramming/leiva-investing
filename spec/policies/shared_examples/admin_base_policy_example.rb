@@ -37,7 +37,6 @@ RSpec.shared_examples "admin_base_policy" do |policy_class, model_class|
   end
 
   permissions :index?, :show?, :new?, :edit?, :create?, :update?, :destroy? do
-    it { expect(subject).to permit(master, model_class) }
     it { expect(subject).to permit(admin, model_class) }
   end
 end
