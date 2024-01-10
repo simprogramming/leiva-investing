@@ -1,4 +1,35 @@
 ---
 en:
-  hello: Hello world
   change_language: FR
+  hello: Hello world
+  helpers:
+    filters:
+      active: Enabled
+      all: All
+      inactive: Disabled
+    links:
+      activate: Activate
+      add: Add
+      add_to_cart: Add to cart
+      back: Back
+      cancel: Cancel
+      destroy: Delete
+      discard: Discard
+      edit: Edit
+      export: Export
+      learn_more: Learn more
+      new: New
+      reset: Reset filters
+      search: Search
+      see_our_catalog: Shop all products
+      sign_out: Sign out
+    submit:
+      create: Create
+      filter: Filter
+      submit: Submit
+      update: Update
+    titles:
+      edit: Edit %{model}
+      new: New %{model}
+      newf: New %{model}
+      newm: New %{model}
