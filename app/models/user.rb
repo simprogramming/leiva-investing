@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   validates :role, :first_name, :last_name, presence: true
 
-  enum role: { admin: "admin", client: "client" }
+  enum role: { admin: "admin", user: "user" }
   translate_enum :role
 end

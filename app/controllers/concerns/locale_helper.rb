@@ -6,8 +6,8 @@ module LocaleHelper
   end
 
   def change_locale
-    # skip_policy_scope
-    # skip_authorization
+    skip_policy_scope
+    skip_authorization
 
     session[:locale] = current_language == :fr ? :en : :fr
 
