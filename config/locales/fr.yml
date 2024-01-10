@@ -1,7 +1,4 @@
 ---
 fr:
-  admin:
-    admin:
-      admin:
-        change_language: EN
   hello: Hello world
+  change_language: EN

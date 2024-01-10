@@ -43,6 +43,8 @@ group :test do
   gem "simplecov-console", require: false
 end
 
+gem "devise"
+# gem "devise-i18n"
 gem "haml-rails"
 gem "i18n-tasks"
 gem "rails-i18n", "~> 7.0.0"
