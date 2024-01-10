@@ -45,6 +45,7 @@ end
 
 gem "devise"
 gem "devise-i18n"
+gem "draper"
 gem "haml-rails"
 gem "i18n-tasks"
 gem "pundit"

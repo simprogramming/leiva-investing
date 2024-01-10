@@ -3,6 +3,8 @@ module Admin
     before_action :set_user, only: %i[edit update show destroy]
     before_action -> { authorize @user || User }
 
+    decorates_assigned :user, :users
+
     def index
       @users = policy_scope(User).order(:first_name, :last_name)
     end
@@ -16,7 +18,7 @@ module Admin
     def update
       @user.assign_attributes(user_params)
       if @user.save
-        redirect_to users_path, notice: update_successful_notice
+        redirect_to admin_users_path, notice: update_successful_notice
       else
         render :edit, status: :unprocessable_entity
       end
@@ -24,7 +26,7 @@ module Admin
 
     def destroy
       @user.destroy
-      redirect_to users_path, notice: destroy_successful_notice
+      redirect_to admin_users_path, notice: destroy_successful_notice
     end
 
     private
