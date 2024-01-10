@@ -1,4 +1,5 @@
 require "simplecov"
+require "pundit/rspec"
 SimpleCov.start "rails"
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
