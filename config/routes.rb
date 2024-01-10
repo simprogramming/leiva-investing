@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  concern :localizable do
+    put :change_locale, controller: "application"
+  end
   scope :admin, module: :admin, as: :admin do
+    concerns :localizable
     draw :admin
   end
 
@@ -7,5 +11,7 @@ Rails.application.routes.draw do
     draw :web
   end
 
-  get '*path', to: 'web/sites#home', constraints: ->(request) { request.format.html? && !request.path.starts_with?('/admin') }
+  get "*path", to: "web/sites#home", constraints: lambda { |request|
+                                                    request.format.html? && !request.path.starts_with?("/admin")
+                                                  }
 end
