@@ -1,9 +1,10 @@
 module Admin
   class UsersController < ApplicationController
     before_action :set_user, only: %i[edit update show destroy]
+    before_action -> { authorize @user || User }
 
     def index
-      @users = User.all
+      @users = policy_scope(User).order(:first_name, :last_name)
     end
 
     def show
@@ -29,7 +30,7 @@ module Admin
     private
 
     def set_user
-      @user = User.find(params[:id])
+      @user = policy_scope(User).find(params[:id])
     end
 
     def user_params
@@ -38,5 +39,4 @@ module Admin
       permitted_attributes(User).except(:password, :password_confirmation)
     end
   end
-
 end

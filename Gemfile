@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 gem "bootsnap", require: false
 gem "cssbundling-rails"
-gem "jbuilder"
+# gem "jbuilder"
 gem "jsbundling-rails"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
@@ -44,8 +44,10 @@ group :test do
 end
 
 gem "devise"
-# gem "devise-i18n"
+gem "devise-i18n"
 gem "haml-rails"
 gem "i18n-tasks"
+gem "pundit"
 gem "rails-i18n", "~> 7.0.0"
 gem "simple_form"
+gem "translate_enum"
