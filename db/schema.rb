@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_10_160349) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_10_202020) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_trgm"
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

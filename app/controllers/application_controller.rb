@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def user_not_authorized
     # Define your user not authorized action
-    flash[:alert] = "You are not authorized to perform this action."
+    flash[:alert] = t("not_allowed")
     redirect_to(request.referer || root_path)
   end
 
@@ -41,6 +41,6 @@ class ApplicationController < ActionController::Base
 
   # Determine the current namespace
   def namespace
-    controller_path.split('/').first.to_sym
+    controller_path.split("/").first.to_sym
   end
 end

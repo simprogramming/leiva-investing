@@ -21,7 +21,6 @@ RSpec.describe Admin::UsersController do
     it { expect(response).to be_successful }
   end
 
-
   describe "GET #edit" do
     before { get :edit, params: { id: user.to_param } }
 

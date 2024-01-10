@@ -7,7 +7,6 @@ RSpec.shared_examples "admin_base_policy" do |policy_class, model_class|
   permissions ".scope" do
     subject { policy_class::Scope.new(current_user, model_class).resolve.to_sql }
 
-
     context "when admin" do
       let(:current_user) { admin }
 
