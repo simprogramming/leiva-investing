@@ -3,10 +3,12 @@
   = f.error_notification
   .form-inputs
     .row.text-start
-      -# .col-md-6
-      -#   = f.input :first_name, required: true, input_html: { autocomplete: "first_name" }
-      -# .col-md-6
-      -#   = f.input :last_name, required: true, input_html: { autocomplete: "last_name" }
+      .col-md-6
+        = f.input :first_name, required: true, input_html: { autocomplete: "first_name" }
+      .col-md-6
+        = f.input :last_name, required: true, input_html: { autocomplete: "last_name" }
+      .col-md-6
+        = f.input :role, collection: User.translated_roles, input_html: { autocomplete: "off" }
       .col-md-6
         = f.input :email, required: true, input_html: { autocomplete: "email" }
       .col-md-6

@@ -11,7 +11,7 @@ en:
         role: Role
         role_list:
           admin: Admin
-          client: Client
+          user: User
     models:
       user:
         one: User

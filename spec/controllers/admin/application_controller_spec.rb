@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.describe Admin::ApplicationController do
+  let(:user) { create(:user, :admin) }
+
+  before { sign_in user }
+
   describe "PUT #change_locale" do
     let(:browser_locale) { "fr-CA" }
     let(:put!) { put :change_locale }
