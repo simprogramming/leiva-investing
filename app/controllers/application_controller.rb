@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
     # Add extra permitted columns to devise for registration
     base_attrs = %i[first_name last_name email role]
     devise_parameter_sanitizer.permit(:sign_up, keys: base_attrs)
-    # Add other configurations as needed
   end
 
   private
