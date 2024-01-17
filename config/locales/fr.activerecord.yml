@@ -2,14 +2,25 @@
 fr:
   activerecord:
     attributes:
+      daily_prediction:
+        closing_price: Prix fermeture
+        high: Prix haut
+        high_time: Temps du prix haut
+        low: Prix bas
+        low_time: Temps du prix bas
+        opening_price: Prix d'ouverture
+        rationale: Raisonnement
+        status_list:
+          bearish: Bearish
+          bullish: Bullish
+          consolidation: Consolidation
       stock:
-        symbol: Symbole
         price: Prix
-        status: Statut
         status_list:
           buying: Achat
           selling: Vendre
           watching: Surveille
+        symbol: Symbole
       user:
         first_name: Prénom
         last_name: Nom de famille
@@ -21,12 +32,15 @@ fr:
           admin: Administrateur
           user: User
     models:
-      user:
-        one: Utilisateur
-        other: Utilisateurs
+      daily_prediction:
+        one: Prédiction quotidienne
+        other: Prédiction quotidiennes
       stock:
         one: Stock
         other: Stocks
+      user:
+        one: Utilisateur
+        other: Utilisateurs
     notices:
       default:
         archived_successfully: "%{model} archivé(e) avec succès"
@@ -36,6 +50,7 @@ fr:
         updated_successfully: "%{model} mis(e) à jour avec succès"
   attributes:
     created_at: Créé le
+    date: Date
     description_en: Description anglais
     description_fr: Description français
     email: Courriel
@@ -43,6 +58,7 @@ fr:
     name: Nom
     name_en: Nom anglais
     name_fr: Nom français
+    status: Statut
     updated_at: Modifié le
   will_paginate:
     page_entries_info:

@@ -1,5 +1,9 @@
 ---
 en:
+  admin:
+    layouts:
+      sidebar:
+        bitcoin_model: Bitcoin Price Prediction Model
   change_language: FR
   errors:
     messages:

@@ -2,6 +2,7 @@ controller :admin do
   get "/", action: :admin, as: :admin
 end
 
+resources :daily_predictions
 resources :users
 resources :stocks
 root "admin#admin"

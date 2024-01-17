@@ -1,0 +1,45 @@
+- model_class = DailyPrediction
+- content_for :title do
+  %h1= model_class.model_name.human count: 2
+
+- content_for :title_actions do
+  - if policy(DailyPrediction).new?
+    = link_to new_admin_daily_prediction_url, class: "btn btn-outline-secondary" do
+      %i.fa-solid.fa-plus
+      = t ".new", default: t("helpers.titles.new", model: model_class.model_name.human)
+
+= render "admin/shared/filter", model_class: model_class
+
+%table.table
+  %thead
+    %tr
+      %th= sortable_header :status, model_class.human_attribute_name(:status)
+      %th= sortable_header :date, model_class.human_attribute_name(:date)
+      %th= sortable_header :opening_price, model_class.human_attribute_name(:opening_price)
+      %th= sortable_header :closing_price, model_class.human_attribute_name(:closing_price)
+      %th= sortable_header :high, model_class.human_attribute_name(:high)
+      %th= sortable_header :high_time, model_class.human_attribute_name(:high_time)
+      %th= sortable_header :low, model_class.human_attribute_name(:low)
+      %th= sortable_header :low_time, model_class.human_attribute_name(:low_time)
+      %th
+
+  %tbody
+    - daily_predictions.each do |daily_prediction|
+      %tr
+        %td= link_to daily_prediction.status, admin_daily_prediction_url(daily_prediction)
+        %td= daily_prediction.date
+        %td= daily_prediction.opening_price
+        %td= daily_prediction.closing_price
+        %td= daily_prediction.high
+        %td= daily_prediction.high_time
+        %td= daily_prediction.low
+        %td= daily_prediction.low_time
+        %td.text-nowrap
+          - if policy(daily_prediction).edit?
+            = link_to edit_admin_daily_prediction_url(daily_prediction), class: "btn btn-primary btn-sm mx-1", data: { turbo: false } do
+              %i.fa-solid.fa-pen
+          - if policy(daily_prediction).destroy?
+            = link_to admin_daily_prediction_url(daily_prediction), class: "btn btn-danger btn-sm mx-1", data: { "turbo-method": :delete, turbo_confirm: "Are you sure?"  } do
+              %i.fa-solid.fa-trash
+
+= add_pagination @daily_predictions

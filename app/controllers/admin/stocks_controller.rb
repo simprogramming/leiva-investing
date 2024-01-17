@@ -33,7 +33,7 @@ module Admin
 
       if @stock.save
         respond_to do |format|
-          format.html { redirect_to [:admin, @stock], notice: 'Stock was successfully created.' }
+          format.html { redirect_to [:admin, @stock], notice: create_successful_notice }
           format.json { render json: @stock, status: :created }
         end
       else
@@ -47,7 +47,7 @@ module Admin
     def update
       if @stock.update(permitted_attributes(stock))
         respond_to do |format|
-          format.html { redirect_to [:admin, @stock], notice: 'Stock was successfully updated.' }
+          format.html { redirect_to [:admin, @stock], notice: update_successful_notice }
           format.json { render json: @stock }
         end
       else
@@ -61,7 +61,7 @@ module Admin
     def destroy
       @stock.destroy
       respond_to do |format|
-        format.html { redirect_to admin_stocks_path, notice: 'Stock was successfully destroyed.' }
+        format.html { redirect_to admin_stocks_path, notice: destroy_successful_notice }
         format.json { head :no_content }
       end
     end

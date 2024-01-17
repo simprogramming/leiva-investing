@@ -1,0 +1,24 @@
+= simple_form_for [:admin, @daily_prediction] do |f|
+  .row
+    .col-md-6
+      = f.input :status, collection: DailyPrediction.translated_statuses
+    .col-md-6
+      = f.input :date
+    .col-md-6
+      = f.input :opening_price
+    .col-md-6
+      = f.input :closing_price
+    .col-md-6
+      = f.input :high
+    .col-md-6
+      = f.input :high_time
+    .col-md-6
+      = f.input :low
+    .col-md-6
+      = f.input :low_time
+    .col-md-12
+      = f.input :rationale
+
+
+  = f.submit t("helpers.submit.submit", default: "Submit"), class: "btn btn-success my-3"
+  = link_to t('.cancel', default: t("helpers.links.cancel")), admin_daily_predictions_url, class: "btn btn-outline-secondary"
