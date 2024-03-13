@@ -10,25 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_17_164258) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_10_230304) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
   enable_extension "unaccent"
-
-  create_table "daily_predictions", force: :cascade do |t|
-    t.date "date"
-    t.decimal "opening_price", precision: 15, scale: 2
-    t.decimal "closing_price", precision: 15, scale: 2
-    t.decimal "high", precision: 15, scale: 2
-    t.decimal "low", precision: 15, scale: 2
-    t.time "high_time"
-    t.time "low_time"
-    t.text "rationale"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "stocks", force: :cascade do |t|
     t.string "name"
