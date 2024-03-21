@@ -17,7 +17,6 @@
             %i.fa-solid.fa-money-bill
             = Stock.model_name.human(count: 2)
 
-      %hr.my-1
   = link_to t("change_language"), admin_change_locale_path, data: { "turbo-method": "put" }, class: "btn nav-link p-0 text-start mt-2"
 
   - if user_signed_in?
