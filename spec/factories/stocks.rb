@@ -3,6 +3,6 @@ FactoryBot.define do
     name { "MyString" }
     symbol { "MyString" }
     price { 1.5 }
-    status { "MyString" }
+    status { "watching" }
   end
 end
