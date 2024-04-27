@@ -2,18 +2,6 @@
 en:
   activerecord:
     attributes:
-      daily_prediction:
-        closing_price: Closing price
-        high: High price
-        high_time: High price time
-        low: Low price
-        low_time: Low price time
-        opening_price: Opening price
-        rationale: Rationale
-        status_list:
-          bearish: Bearish
-          bullish: Bullish
-          consolidation: Consolidation
       stock:
         price: Price
         status_list:
@@ -32,9 +20,6 @@ en:
           admin: Admin
           user: User
     models:
-      daily_prediction:
-        one: Daily prediction
-        other: Daily predictions
       stock:
         one: Stock
         other: Stocks

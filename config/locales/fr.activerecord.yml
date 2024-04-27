@@ -2,18 +2,6 @@
 fr:
   activerecord:
     attributes:
-      daily_prediction:
-        closing_price: Prix fermeture
-        high: Prix haut
-        high_time: Temps du prix haut
-        low: Prix bas
-        low_time: Temps du prix bas
-        opening_price: Prix d'ouverture
-        rationale: Raisonnement
-        status_list:
-          bearish: Bearish
-          bullish: Bullish
-          consolidation: Consolidation
       stock:
         price: Prix
         status_list:
@@ -32,9 +20,6 @@ fr:
           admin: Administrateur
           user: User
     models:
-      daily_prediction:
-        one: Prédiction quotidienne
-        other: Prédiction quotidiennes
       stock:
         one: Stock
         other: Stocks
