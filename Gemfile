@@ -55,5 +55,3 @@ gem "simple_form"
 gem "translate_enum"
 gem "will_paginate"
 gem "will_paginate-bootstrap-style"
-
-gem "tailwindcss-rails", "~> 2.4"
