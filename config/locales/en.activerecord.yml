@@ -3,13 +3,12 @@ en:
   activerecord:
     attributes:
       stock:
-        symbol: Symbol
         price: Price
-        status: Status
         status_list:
           buying: Buying
           selling: Selling
           watching: Watching
+        symbol: Symbol
       user:
         first_name: First Name
         last_name: Last Name
@@ -21,12 +20,12 @@ en:
           admin: Admin
           user: User
     models:
-      user:
-        one: User
-        other: Users
       stock:
         one: Stock
         other: Stocks
+      user:
+        one: User
+        other: Users
     notices:
       default:
         archived_successfully: "%{model} archived successfully"
@@ -36,6 +35,7 @@ en:
         updated_successfully: "%{model} updated successfully"
   attributes:
     created_at: Created at
+    date: Date
     description_en: Description english
     description_fr: Description french
     email: Email
@@ -43,6 +43,7 @@ en:
     name: Name
     name_en: Name english
     name_fr: Name french
+    status: Status
     updated_at: Updated at
   will_paginate:
     page_entries_info:

@@ -11,10 +11,7 @@ Rails.application.routes.draw do
   end
 
   scope "/", module: :web, as: :web do
+    concerns :localizable
     draw :web
   end
-
-  get "*path", to: "web/sites#home", constraints: lambda { |request|
-                                                    request.format.html? && !request.path.starts_with?("/admin")
-                                                  }
 end
