@@ -41,3 +41,7 @@ fr:
       newf: Nouvelle %{model}
       newm: Nouvel %{model}
   not_allowed: Vous n'êtes pas autorisé à effectuer cette action.
+  web:
+    layouts:
+      navbar:
+        home: "Acceuil"
