@@ -4,7 +4,7 @@ class AddFieldsToStock < ActiveRecord::Migration[7.0]
       t.boolean :dividend, default: false
       t.float :yield
       t.string :distribution
-      t.integer :position
+      t.integer :position, uniq: true
     end
   end
 end

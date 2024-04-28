@@ -15,7 +15,7 @@
       <tr>
         <th style="color:#239C8F" class="ps-3"><%= stock.name %></th>
         <th><%= stock.symbol %></th>
-        <th><%= stock.price %></th>
+        <th><%= "#{stock.price}$" %></th>
         <th><%= bool_to_text(stock.dividend) %></th>
         <th><%= stock.yield ? "#{stock.yield}%" : "" %></th>
         <th><%= stock.translated_distribution %></th>

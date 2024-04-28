@@ -14,6 +14,7 @@
   %thead
     %tr
       %th= sortable_header :name, model_class.human_attribute_name(:name)
+      %th= sortable_header :name, model_class.human_attribute_name(:position)
       %th= sortable_header :symbol, model_class.human_attribute_name(:symbol)
       %th= sortable_header :price, model_class.human_attribute_name(:price)
       %th= sortable_header :dividend, model_class.human_attribute_name(:dividend)
@@ -26,6 +27,7 @@
     - stocks.each do |stock|
       %tr
         %td= link_to stock.name, admin_stock_url(stock)
+        %td= stock.position
         %td= stock.symbol
         %td= stock.price
         %td= bool_to_text(stock.dividend)
