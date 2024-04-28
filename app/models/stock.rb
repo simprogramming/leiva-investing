@@ -4,5 +4,7 @@ class Stock < ApplicationRecord
   validates :name, :symbol, :price, :status, presence: true
 
   enum status: { buying: "buying", selling: "selling", watching: "watching" }
+  enum distribution: { monthly: "monthly", quarterly: "quarterly"}
   translate_enum :status
+  translate_enum :distribution
 end

@@ -3,6 +3,11 @@ en:
   activerecord:
     attributes:
       stock:
+        distribution_list:
+          monthly: Monthly
+          quarterly: Quarterly
+        dividend: Dividend
+        yield: Yield
         price: Price
         status_list:
           buying: Buying

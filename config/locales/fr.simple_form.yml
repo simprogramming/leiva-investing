@@ -3,8 +3,8 @@ fr:
   simple_form:
     error_notification:
       default_message: 'Please review the problems below:'
-    'no': 'No'
+    'no': 'Non'
     required:
       mark: "*"
       text: required
-    'yes': 'Yes'
+    'yes': 'Oui'

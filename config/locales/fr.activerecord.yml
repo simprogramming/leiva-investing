@@ -3,6 +3,11 @@ fr:
   activerecord:
     attributes:
       stock:
+        distribution_list:
+          monthly: Mensuel
+          quarterly: Trimestriel
+        dividend: Dividende
+        yield: Yield
         price: Prix
         status_list:
           buying: Achat

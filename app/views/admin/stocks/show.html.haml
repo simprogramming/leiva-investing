@@ -9,6 +9,12 @@
   %dd.col-sm-9= stock.symbol
   %dt.col-sm-3= model_class.human_attribute_name :price
   %dd.col-sm-9= stock.price
+  %dt.col-sm-3= model_class.human_attribute_name :dividend
+  %dd.col-sm-9= bool_to_text(stock.dividend)
+  %dt.col-sm-3= model_class.human_attribute_name :yield
+  %dd.col-sm-9= stock.yield
+  %dt.col-sm-3= model_class.human_attribute_name :distribution
+  %dd.col-sm-9= stock.translated_distribution
   %dt.col-sm-3= model_class.human_attribute_name :status
   %dd.col-sm-9= stock.status
 
