@@ -7,7 +7,7 @@ module Admin
     decorates_assigned :stock, :stocks
 
     def index
-      @stocks = policy_scope(Stock).order(:name)
+      @stocks = policy_scope(Stock).order(:position)
       respond_to do |format|
         format.html # continue as normal for HTML requests
         format.json { render json: @stocks } # JSON response for API

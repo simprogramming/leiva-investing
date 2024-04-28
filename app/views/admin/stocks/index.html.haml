@@ -14,8 +14,12 @@
   %thead
     %tr
       %th= sortable_header :name, model_class.human_attribute_name(:name)
+      %th= sortable_header :name, model_class.human_attribute_name(:position)
       %th= sortable_header :symbol, model_class.human_attribute_name(:symbol)
       %th= sortable_header :price, model_class.human_attribute_name(:price)
+      %th= sortable_header :dividend, model_class.human_attribute_name(:dividend)
+      %th= sortable_header :yield, model_class.human_attribute_name(:yield)
+      %th= sortable_header :distribution, model_class.human_attribute_name(:distribution)
       %th= sortable_header :status, model_class.human_attribute_name(:status)
       %th
 
@@ -23,8 +27,12 @@
     - stocks.each do |stock|
       %tr
         %td= link_to stock.name, admin_stock_url(stock)
+        %td= stock.position
         %td= stock.symbol
         %td= stock.price
+        %td= bool_to_text(stock.dividend)
+        %td= stock.yield ? "#{stock.yield}%" : ""
+        %td= stock.translated_distribution
         %td= stock.translated_status
         %td.text-nowrap
           - if policy(stock).edit?
