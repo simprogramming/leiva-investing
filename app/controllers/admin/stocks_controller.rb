@@ -8,10 +8,6 @@ module Admin
 
     def index
       @stocks = policy_scope(Stock).order(:position)
-      respond_to do |format|
-        format.html # continue as normal for HTML requests
-        format.json { render json: @stocks } # JSON response for API
-      end
     end
 
     def show
@@ -32,38 +28,23 @@ module Admin
       @stock = Stock.new(permitted_attributes(Stock))
 
       if @stock.save
-        respond_to do |format|
-          format.html { redirect_to [:admin, @stock], notice: create_successful_notice }
-          format.json { render json: @stock, status: :created }
-        end
+        redirect_to [:admin, @stock], notice: create_successful_notice
       else
-        respond_to do |format|
-          format.html { render :new }
-          format.json { render json: @stock.errors, status: :unprocessable_entity }
-        end
+        render :new, status: :unprocessable_entity
       end
     end
 
     def update
       if @stock.update(permitted_attributes(stock))
-        respond_to do |format|
-          format.html { redirect_to [:admin, @stock], notice: update_successful_notice }
-          format.json { render json: @stock }
-        end
+        redirect_to [:admin, @stock], notice: update_successful_notice
       else
-        respond_to do |format|
-          format.html { render :edit }
-          format.json { render json: @stock.errors, status: :unprocessable_entity }
-        end
+        render :edit, status: :unprocessable_entity
       end
     end
 
     def destroy
       @stock.destroy
-      respond_to do |format|
-        format.html { redirect_to admin_stocks_path, notice: destroy_successful_notice }
-        format.json { head :no_content }
-      end
+      redirect_to admin_stocks_path, notice: destroy_successful_notice
     end
 
     private
