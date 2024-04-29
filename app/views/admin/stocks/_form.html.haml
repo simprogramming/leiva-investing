@@ -1,12 +1,14 @@
 = simple_form_for [:admin, @stock] do |f|
   .row
     .col-md-6
-      = f.input :name
-    .col-md-6
       = f.input :symbol
     .col-md-6
+      = f.input :api_symbol
+    .col-md-6
+      = f.input :name
+    .col-md-6
       = f.input :price
-    .col-md-6.mt-4
+    .col-md-6.mt-3
       = f.input :dividend
     .col-md-6
       = f.input :yield

@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_28_033422) do
     t.float "yield"
     t.string "distribution"
     t.integer "position"
+    t.string "api_symbol"
   end
 
   create_table "users", force: :cascade do |t|

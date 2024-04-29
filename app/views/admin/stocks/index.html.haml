@@ -3,6 +3,10 @@
   %h1= model_class.model_name.human count: 2
 
 - content_for :title_actions do
+  - if policy(Stock).update_prices?
+    = link_to update_prices_admin_stocks_url, class: "btn btn-outline-secondary mx-2" do
+      %i.fa-solid.fa-rotate
+      = t "helpers.titles.sync"
   - if policy(Stock).new?
     = link_to new_admin_stock_url, class: "btn btn-outline-secondary" do
       %i.fa-solid.fa-plus

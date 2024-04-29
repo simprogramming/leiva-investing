@@ -3,9 +3,9 @@ controller :admin do
 end
 
 resources :users
-resources :stocks
-root "admin#admin"
-
-namespace :api, defaults: { format: :json } do
-  resources :stocks, only: %i[index show create update destroy]
+resources :stocks do
+  collection do
+    get :update_prices
+  end
 end
+root "admin#admin"
