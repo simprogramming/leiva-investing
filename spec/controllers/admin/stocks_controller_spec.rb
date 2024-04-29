@@ -30,6 +30,12 @@ RSpec.describe Admin::StocksController do
     it { expect(response).to be_successful }
   end
 
+  describe "GET #new" do
+    before { get :new, params: { id: stock.to_param } }
+
+    it { expect(response).to be_successful }
+  end
+
   describe "POST #create" do
     let(:attributes) { }
     let(:post!) { post :create, params: { stock: attributes } }

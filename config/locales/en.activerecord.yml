@@ -8,13 +8,13 @@ en:
           monthly: Monthly
           quarterly: Quarterly
         dividend: Dividend
-        yield: Yield
         price: Price
         status_list:
           buying: Buying
           selling: Selling
           watching: Watching
         symbol: Symbol
+        yield: Yield
       user:
         first_name: First Name
         last_name: Last Name

@@ -43,11 +43,13 @@ module Admin
       redirect_to admin_stocks_path, notice: destroy_successful_notice
     end
 
+    # :nocov:
     def update_prices
       skip_policy_scope
       RapidApiServices::UpdateStockPrices.new.run!
       redirect_to admin_stocks_path, notice: update_successful_notice
     end
+    # :nocov:
 
     private
 

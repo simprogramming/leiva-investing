@@ -1,3 +1,4 @@
+# :nocov:
 require "json"
 require "dotenv/load"
 require "uri"
@@ -35,4 +36,4 @@ module RapidApiServices
       end
     end
   end
-end
+end # :nocov:

@@ -41,4 +41,5 @@ en:
   web:
     layouts:
       navbar:
-        home: "Home"
+        admin: Admin
+        home: Home

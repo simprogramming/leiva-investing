@@ -41,4 +41,5 @@ fr:
   web:
     layouts:
       navbar:
-        home: "Accueil"
+        admin: Admin
+        home: Accueil
