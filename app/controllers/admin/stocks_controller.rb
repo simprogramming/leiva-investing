@@ -11,10 +11,6 @@ module Admin
     end
 
     def show
-      respond_to do |format|
-        format.html
-        format.json { render json: @stock }
-      end
     end
 
     def new
@@ -45,6 +41,12 @@ module Admin
     def destroy
       @stock.destroy
       redirect_to admin_stocks_path, notice: destroy_successful_notice
+    end
+
+    def update_prices
+      skip_policy_scope
+      RapidApiServices::UpdateStockPrices.new.run!
+      redirect_to admin_stocks_path, notice: update_successful_notice
     end
 
     private

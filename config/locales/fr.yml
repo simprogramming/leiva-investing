@@ -36,6 +36,7 @@ fr:
       new: Nouveau %{model}
       newf: Nouvelle %{model}
       newm: Nouvel %{model}
+      sync: Sync
   not_allowed: Vous n'êtes pas autorisé à effectuer cette action.
   web:
     layouts:

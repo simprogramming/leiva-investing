@@ -5,6 +5,7 @@ class AddFieldsToStock < ActiveRecord::Migration[7.0]
       t.float :yield
       t.string :distribution
       t.integer :position, uniq: true
+      t.string :api_symbol
     end
   end
 end

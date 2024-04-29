@@ -3,6 +3,7 @@ en:
   activerecord:
     attributes:
       stock:
+        api_symbol: Api symbol
         distribution_list:
           monthly: Monthly
           quarterly: Quarterly

@@ -3,5 +3,9 @@ controller :admin do
 end
 
 resources :users
-resources :stocks
+resources :stocks do
+  collection do
+    get :update_prices
+  end
+end
 root "admin#admin"
