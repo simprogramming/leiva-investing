@@ -14,5 +14,6 @@
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --target=safari11 --outdir=app/assets/builds",
     "build:css": "sass ./app/assets/stylesheets/admin.scss:./app/assets/builds/admin.css ./app/assets/stylesheets/web.scss:./app/assets/builds/web.css --no-source-map --load-path=node_modules"
-  }
+  },
+  "packageManager": "yarn@1.22.21"
 }
