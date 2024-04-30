@@ -85,6 +85,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
+    browser (5.3.1)
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -159,9 +160,6 @@ GEM
     irb (1.10.1)
       rdoc
       reline (>= 0.3.8)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     jsbundling-rails (1.2.1)
       railties (>= 6.0.0)
     json (2.6.3)
@@ -373,6 +371,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  browser
   capybara
   cssbundling-rails
   debug
@@ -383,7 +382,6 @@ DEPENDENCIES
   factory_bot_rails
   haml-rails
   i18n-tasks
-  jbuilder
   jsbundling-rails
   pg (~> 1.1)
   pg_search

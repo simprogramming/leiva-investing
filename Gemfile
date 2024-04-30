@@ -44,6 +44,7 @@ group :test do
   gem "simplecov-console", require: false
 end
 
+gem "browser"
 gem "devise"
 gem "devise-i18n"
 gem "draper"
