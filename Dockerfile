@@ -19,12 +19,13 @@ ENV BUNDLE_DEPLOYMENT="1" \
 RUN gem update --system --no-document && \
     gem install -N bundler
 
+
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential curl libpq-dev node-gyp pkg-config python-is-python3 git
+    apt-get install --no-install-recommends -y build-essential curl libpq-dev node-gyp pkg-config python-is-python3
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=21.7.3
@@ -55,13 +56,16 @@ RUN bundle exec bootsnap precompile app/ lib/
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE=DUMMY ./bin/rails assets:precompile
 
+
 # Final stage for app image
 FROM base
 
-# Install runtime necessary packages
+# Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl postgresql-client && \
-    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives
+    apt-get install --no-install-recommends -y build-essential curl libpq-dev node-gyp pkg-config python-is-python3 git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
@@ -69,15 +73,15 @@ COPY --from=build /rails /rails
 
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
-    useradd --uid 1000 --gid 1000 --create-home --shell /bin/bash rails && \
-    chown -R 1000:1000 /rails
+    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
+    chown -R 1000:1000 db log tmp
 USER 1000:1000
 
 # Deployment options
 ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_SERVE_STATIC_FILES="true"
 
-# Entrypoint sets up the container
+# Entrypoint sets up the container.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
