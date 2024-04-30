@@ -43,3 +43,6 @@ en:
       navbar:
         admin: Admin
         home: Home
+      application:
+        desktop_available: "This web app is only available on desktop screens."
+        go_laptop: "Go to laptop or desktop to view full content"

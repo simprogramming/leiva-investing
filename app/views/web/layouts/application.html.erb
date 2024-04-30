@@ -13,6 +13,13 @@
   <body>
     <%= render "web/layouts/navbar" %>
     <%= render 'web/layouts/scroll_widget' %>
-    <%= yield %>
+    <% if browser.device.mobile? %>
+      <div class="container my-5 mx-auto text-center">
+        <p><%= t(".desktop_available") %></p>
+        <p><%= t(".go_laptop") %></p>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

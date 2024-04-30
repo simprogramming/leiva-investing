@@ -43,3 +43,6 @@ fr:
       navbar:
         admin: Admin
         home: Accueil
+      application:
+        desktop_available: "Cette application web n'est disponible que sur les écrans de bureau."
+        go_laptop: "Allez sur un ordinateur portable ou de bureau pour voir le contenu complet"
